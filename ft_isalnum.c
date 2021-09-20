@@ -8,11 +8,4 @@ int ft_isalnum(int c)
 		i = 1;
 
 	return (i);
-	
-}
-
-int main ()
-{
-	printf("%d\n", ft_isalnum('8'));
-	return (0);
-}
+}	

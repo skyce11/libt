@@ -17,10 +17,3 @@ void ft_putendl_fd(char *s, int fd)
 	write(fd, &a, 1);
 }
 
-int main()
-{
-	int fd = 0;
-	char *s = "Hola buenas tardes";
-	ft_putendl_fd(s, fd);
-	printf("%d\n", fd);
-}

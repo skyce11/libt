@@ -11,9 +11,3 @@ int ft_isdigit(int c)
 
 	return (i);
 }
-
-int main()
-{
-	printf("%d\n", ft_isdigit('a'));
-	return (0);
-}

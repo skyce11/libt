@@ -11,9 +11,3 @@ int ft_isalpha	(int c)
 	return (i);
 }
 
-int main ()
-{
-	printf("%d\n", ft_isalpha(26));
-	return (0);
-
-}

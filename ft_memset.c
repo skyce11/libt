@@ -34,16 +34,3 @@ void *ft_memset (void *s, int c, size_t n)
 
 
 
-int main ()
-{
-	char str[50] = "GeeksForGeeks is for programming geeks.";
-	
-	printf("\nBefore memset(): %s\n", str);
-	memset(str + 13, '.', 8*sizeof (char));
-	printf("After memset(): %s", str);
-	ft_memset(str + 13, '.', 8*sizeof(char));
-	printf("\nAfter my memset(): %s\n", str);
-	return (0);
-
-
-}

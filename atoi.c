@@ -1,20 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
-int ft_isdigit(int c)
-{
-	int i;
-
-	i = 0;
-
-	if (c >= '0' && c <= '9')
-		i = 1;
-
-	return (i);
-}
+int ft_isdigit(int c);
 
 int ft_atoi(const char *str)
 {
@@ -43,11 +30,3 @@ int ft_atoi(const char *str)
 }
 
 
-
-int main ()
-{
-	const char *prueba = "-2147483650";
-	printf("%d\n", ft_atoi(prueba));
-	printf("%d\n", atoi(prueba));
-	return (0);
-}

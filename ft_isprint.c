@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int ft_isascii (int c)
+int ft_isprint (int c)
 {
 	int i = 0;
 	if ((c >= 040 && c <= 047) || (c >= 050 && c <= 057) || (c >= 060 && c <= 067) ||
@@ -14,8 +14,3 @@ int ft_isascii (int c)
 	return (i);
 }
 
-int main ()
-{
-	printf("%d\n", ft_isascii(0263));
-	return (0);
-}

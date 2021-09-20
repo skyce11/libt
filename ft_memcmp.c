@@ -26,12 +26,3 @@ int ft_memcmp (const void *s1, const void *s2, size_t n)
 	}
 	return (r);
 }
-
-int main ()
-{
-	char *a = "hola";
-	char *b = "holo";
-	printf("%d\n", memcmp(a, b, 5));
-	printf("%d\n", ft_memcmp(a, b, 5));
-	return (0);
-}

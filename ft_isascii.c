@@ -7,9 +7,3 @@ int ft_isascii(int c)
 		i = 1;
 	return (i);
 }
-
-int main()
-{
-	printf("%d\n", ft_isascii(200));
-	return (0);
-}
