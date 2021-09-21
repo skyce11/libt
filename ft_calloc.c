@@ -1,8 +1,6 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int ft_bzero(void *s, size_t size);
+void ft_bzero(void *s, size_t size);
 
 
 void *ft_calloc (size_t count, size_t size)

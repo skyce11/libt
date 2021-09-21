@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 
 int ft_strncmp (const char *s1, const char *s2, size_t n)
@@ -9,6 +8,10 @@ int ft_strncmp (const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	r = 0;
+
+
+	if (s1[0] == '\0')
+		r = s1[0] - s2[0];
 
 	while (s1[i] != '\0' && i <= n)
 	{
@@ -22,11 +25,4 @@ int ft_strncmp (const char *s1, const char *s2, size_t n)
 	return (r);
 }
 
-int main()
-{
-	const char *a = "hola";
-	const char *b = "holo";
-	printf("%d\n", ft_strncmp(a, b, 1));
-	return (0);
 
-}

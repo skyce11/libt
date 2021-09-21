@@ -1,29 +1,13 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-
-int ft_strlen(const char *s)
-{
-	int i;
-	int r;
-
-	i = 0;
-	r = 0;
-	while(s[i] != '\0')
-	{
-		i++;
-		r++;
-	}
-	return (r);
-}
-
-
+size_t ft_strlen( char *s);
 
 char * ft_strrchr(const char *s, int c)
 {
 	int i;
+	char *aux = (char *) s;
 
-	i = ft_strlen(s);
+	i = ft_strlen(aux);
 	while ( i>=0)
 	{
 		if (s[i] == c)
@@ -36,15 +20,3 @@ char * ft_strrchr(const char *s, int c)
 
 }
 
-
-int main()
-{
-	const char *a = "hola buenas tardes";
-
-	int b = '\0';
-
-	printf("%s\n", strrchr(a, b));
-	printf("%s\n", ft_strrchr(a, b));
-
-	return (0);
-}

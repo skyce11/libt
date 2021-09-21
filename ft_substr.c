@@ -1,6 +1,4 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 
 
@@ -24,10 +22,3 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (new);
 }
 
-int main()
-{
-
-	char const *a = "Hola buenas tardes y buenas noches";
-	printf("El nuevo array es ----> %s\n", ft_substr(a, 10, 5));
-   return (0);	
-}

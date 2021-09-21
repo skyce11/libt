@@ -1,22 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 
-unsigned long ft_strlen(char *s)
-{
-	int i;
-	unsigned long r;
-
-	i = 0;
-	r = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-		r++;
-	}
-	return (r);
-}
 
 size_t ft_strlcpy (char* restrict dest, const char* restrict src, size_t dstsize)
 {

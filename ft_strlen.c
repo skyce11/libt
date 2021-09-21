@@ -1,25 +1,15 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-unsigned long ft_strlen( char *s)
+size_t ft_strlen( char *s)
 {
-	int i;
-	unsigned long r;
+	size_t i;
 
 	i = 0;
-	r = 0;
 	while(s[i] != '\0')
 	{
 		i++;
-		r++;
 
 	}
-	return (r);
+	return (i);
 }
 
-int main ()
-{
-	printf ("%lu\n", strlen(" "));
-	printf ("%lu\n", ft_strlen(" "));
-	return (0);
-}

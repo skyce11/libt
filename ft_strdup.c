@@ -1,29 +1,18 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 
-size_t ft_strlen(const char *s)
-{
-	size_t i;
-
-	i = 0;
-
-	while(s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+size_t ft_strlen( char *s);
 
 
 char *ft_strdup(const char *s1)
 {
 	char *copy;
+	char *aux1;
 	size_t size;
 	char *aux;
 
-	size = ft_strlen(s1);
+	aux1 = (char *) s1;
+	size = ft_strlen(aux1);
 	copy = malloc(size + 1);
 	aux = copy;
 
@@ -38,15 +27,3 @@ char *ft_strdup(const char *s1)
 }
 
 
-int main()
-{
-	char array1[] = "This is the array";
-	char *p;
-	char *p1;
-	p = strdup(array1);
-	p1 = ft_strdup(array1);
-	printf("Original ---->  %s\n", array1);
-	printf("Official duplicated ----> %s\n", p);
-	printf("My duplicated ----> %s\n", p1);
-	return (0);
-}

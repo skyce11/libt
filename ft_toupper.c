@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_toupper (int c)
 {
@@ -8,10 +7,3 @@ int ft_toupper (int c)
 	return (c);
 }
 
-
-int main()
-{
-	printf("%d\n", ft_toupper('t'));
-	printf("%d\n", toupper('t'));
-	return (0);
-}

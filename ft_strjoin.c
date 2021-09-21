@@ -1,23 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 
 
-
-unsigned long ft_strlen(char const *s)
-{
-	int i;
-	unsigned long r;
-	i = 0;
-	r = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-		r++;
-	}
-	return (r);
-}
+size_t ft_strlen(char *s);
 
 char *ft_strcpy(char *dest, const char *src)
 {
@@ -60,8 +45,10 @@ char *ft_strcat(char *dest, const char *src)
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
+	char *auxs1 = (char *) s1;
+	char *auxs2 = (char *) s2;
 	char *result;
-	 result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	 result = malloc(ft_strlen(auxs1) + ft_strlen(auxs2) + 1);
 	 if (*result)
 	 {
 		 ft_strcpy(result, s1);
@@ -71,11 +58,3 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-int main()
-{
-
-	char const *a = "Buenas tardes";
-	char const *b = "Buenas noches";
-	printf("Primera prueba ---> %s\n", ft_strjoin(a, b));
-	return (0);
-}

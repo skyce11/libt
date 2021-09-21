@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 
 void ft_putendl_fd(char *s, int fd)
@@ -10,7 +9,7 @@ void ft_putendl_fd(char *s, int fd)
 	a = '\n';
 	i = -1;
 
-	while(s && s[i++])
+	while(s && s[++i])
 	{
 		write(fd, &s[i], 1);
 	}
