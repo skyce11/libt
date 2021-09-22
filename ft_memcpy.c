@@ -4,21 +4,19 @@
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
 	 char *a;
-	 char *b;
+	 const char *b;
 
 	 a = (char *) dst;
-	 b = (char *) src;
+	 b = (const char *) src;
 
-	size_t i;
+	 if ((dst == src) || n == 0)
+		 return (dst);
 
-	i = 0;
+	 if (!dst && !src)
+		 return (0);
 
-	while (b[i] != '\0' && n > 0)
-	{
-		a[i] = b[i];
-		i++;
-		n--;
-	}
+	 while (n--)
+		 a[n] =  b[n];
 	return (dst);
 }
 

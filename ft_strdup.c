@@ -6,24 +6,17 @@ size_t ft_strlen( char *s);
 
 char *ft_strdup(const char *s1)
 {
-	char *copy;
-	char *aux1;
-	size_t size;
 	char *aux;
+	char *aux1;
+	size_t len;
 
 	aux1 = (char *) s1;
-	size = ft_strlen(aux1);
-	copy = malloc(size + 1);
-	aux = copy;
-
-
-	while (*s1)
-	{
-		*aux++ = *s1++;
-	}
-	*aux = '\0';
-	free(copy);
-	return (copy);
+	len = ft_strlen(aux1) + 1;
+	aux = malloc (sizeof(char) * len);
+	if (!aux)
+		return (0);
+	aux = ft_memcpy(aux, aux1, len);
+	return (aux);
 }
 
 

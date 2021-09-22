@@ -1,7 +1,7 @@
 #include "libft.h"
 
 
-
+/*
 size_t ft_strlen(char *s);
 
 char *ft_strcpy(char *dest, const char *src)
@@ -39,22 +39,40 @@ char *ft_strcat(char *dest, const char *src)
 	dest[j] = '\0';
 	return (dest);
 }
-
+*/
 
 
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-	char *auxs1 = (char *) s1;
-	char *auxs2 = (char *) s2;
-	char *result;
-	 result = malloc(ft_strlen(auxs1) + ft_strlen(auxs2) + 1);
-	 if (*result)
-	 {
-		 ft_strcpy(result, s1);
-		 ft_strcat(result, s2);
-	 }
-	 free(result);
-	return (result);
+	size_t s1_len;
+	size_t s2_len;
+	size_t tot_len;
+	char *aux;
+	char *aux_len1;
+	char *aux_len2;
+
+
+	aux_len1 = (char *) s1;
+	aux_len2 = (char *) s2;
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+
+	s1_len = ft_strlen(aux_len1);
+	s2_len = ft_strlen(aux_len2);
+	tot_len = s1_len + s2_len +1;
+	aux = malloc(sizeof(char) * tot_len);
+	if (!aux)
+		return (0);
+	ft_memmove(aux, s1, s1_len);
+	ft_memmove(aux + s1_len, s2, s2_len);
+	aux[tot_len - 1] = '\0';
+	return (aux);
+
+
 }
 

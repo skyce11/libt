@@ -2,7 +2,7 @@
 
 
 
-
+/*
 int compare( const char *a, const char *b)
 {
 	while(*a && *b)
@@ -15,30 +15,32 @@ int compare( const char *a, const char *b)
 	return (1);
 }
 
-
+*/
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	int j;
-//	const char* aux;
+	size_t h;
+	size_t n;
 
-	i = 0;
-	j = 0;
+	h = 0;
 
 	if (needle[0] == '\0')
-		return (char *)haystack;
+		return ((char *) haystack);
 
-	while (*haystack != '\0' && len > 0)
+	while(haystack[h] != '\0')
 	{
-		if (*haystack == *needle && compare(haystack, needle))
+		n = 0;
+
+		while (haystack[h + n] == needle [n] && (n + h) < len)
 		{
-			return ((char *)needle);
+			if (haystack[h + n] == '\0' && needle[n] == '\0')
+				return ((char *)&haystack[h]);
+			n++;
 		}
-		haystack++;
-		len--;
+		if (needle[n] == '\0')
+			return ((char *) haystack + h);
+		h++;
 	}
-	
-	return (NULL);
+	return (0);
 }
 
 

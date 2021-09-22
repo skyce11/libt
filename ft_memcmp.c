@@ -3,25 +3,19 @@
 
 int ft_memcmp (const void *s1, const void *s2, size_t n)
 {
-	char *a;
-	char *b;
-	int r;
+	const unsigned char *aux1;
+	const unsigned char *aux2;
 	size_t i;
 
-	a = (char *) s1;
-	b = (char *) s2;
-
 	i = 0;
-	r = 0;
+	aux1 = (const unsigned char *) s1;
+	aux2 = (const unsigned char *) s2;
 
-	while (a[i] != '\0' && i <=n )
+	while ( i < n)
 	{
-		if (a[i] != b[i])
-		{
-			r = a[i] - b[i];
-			break;
-		}
+		if (aux1[i] != aux2[i])
+			return (aux1[i] - aux2[i]);
 		i++;
 	}
-	return (r);
+	return (0);
 }
