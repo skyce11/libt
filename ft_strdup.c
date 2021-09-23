@@ -1,7 +1,6 @@
 #include "libft.h"
 
 
-size_t ft_strlen( char *s);
 
 
 char *ft_strdup(const char *s1)
