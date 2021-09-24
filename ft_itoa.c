@@ -30,6 +30,21 @@ int int_len (int c)
 	return (i);
 }
 
+int reverse(int n)
+{
+	int rev;
+	int res;
+
+	rev = 0;
+
+	while (n != 0)
+	{
+		res = n%10;
+		n = n /10;
+		rev = rev *10 + res;
+	}
+	return (rev);
+}
 
 
 
@@ -44,20 +59,36 @@ char * ft_itoa(int n)
 	char *aux;
 	int res;
 	int i;
+	int n_aux;
+
+	n_aux = reverse(n);
 
 
 	i = 0;
 	res = 0;
-	aux = malloc (sizeof(char) * (int_len(n) +1));
+	aux = malloc (sizeof(char) * (int_len(n_aux) +1));
+	if (!aux)
+		return (0);
 
-	while (n != 0)
+
+	if (n_aux < 0)
 	{
-		res = n % 10;
-		aux[i] = res + 48;
-		n = n /10;
+		aux[i] = '-';
+		n_aux = - n_aux;
 		i++;
 	}
-	aux =ft_rev_int_tab(aux, int_len(n));
+	if (n == 0)
+		aux[i] = '0';
+
+	while (n_aux != 0)
+	{
+		res = n_aux % 10;
+		aux[i] = res + 48;
+		n_aux = n_aux /10;
+		i++;
+	}
+	aux[i] = '\0';
+//	aux =ft_rev_int_tab(aux, int_len(n));
 
 	return (aux);
 
@@ -65,8 +96,7 @@ char * ft_itoa(int n)
 
 int main()
 {
-	 int c = 45678;
-	 printf("%d\n", int_len(c));
-	 printf("%s\n", ft_itoa(c));
+	 int c = 1073713583;
+	 printf("Main --- >%s\n", ft_itoa(c));
 	 return (0);
 }

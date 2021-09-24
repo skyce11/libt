@@ -1,7 +1,13 @@
 #include "libft.h"
 
-int ft_isdigit(int c);
 
+/*
+int checkoverflow (unsigned long n, int neg)
+{
+	
+}
+
+*/
 int ft_atoi(const char *str)
 {
 	int i;

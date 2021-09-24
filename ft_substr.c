@@ -13,6 +13,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	new = malloc((len + 1) * sizeof(char));
 	i = 0;
 
+	if (!s)
+	{
+		return (0);;
+	}
+
+
 	if (!new)
 		return (NULL);
 
