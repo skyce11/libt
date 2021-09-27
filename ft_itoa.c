@@ -1,5 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/27 10:31:48 by migonzal          #+#    #+#             */
+/*   Updated: 2021/09/27 11:09:23 by migonzal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+
 #include "libft.h"
 
+int char_len (char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 char*	ft_rev_int_tab(char *tab, int size)
 {
@@ -96,7 +122,10 @@ char * ft_itoa(int n)
 
 int main()
 {
-	 int c = 1073713583;
-	 printf("Main --- >%s\n", ft_itoa(c));
+	char *c = "7654567";
+
+	 c = malloc(char_len(c) * sizeof(char));
+	 
+	 printf("Main --- >%s\n", ft_rev_int_tab(c, char_len(c)));
 	 return (0);
 }

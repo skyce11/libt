@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 10:30:19 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:30:21 by migonzal         ###   ########.fr       */
+/*   Created: 2021/09/27 10:33:02 by migonzal          #+#    #+#             */
+/*   Updated: 2021/09/27 10:33:04 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 
+
 #include "libft.h"
 
-
-
-void *ft_calloc (size_t count, size_t size)
+void ft_lstclear (t_list **lst, void (*del) (void *))
 {
-	size_t tot_size;
-	void *dst;
+	t_list *t;
+	t_list *aux;
 
-	tot_size = size * count;
-	if (!(dst = malloc(tot_size)))
-			return (0);
-	ft_memset(dst, 0, tot_size);
-	return (dst);
+	t = *lst;
 
+	while (t)
+	{
+		aux = t -> next;
+		ft_lstdelone(t, del);
+		t = aux;
+	}
+	*lst = NULL;
 }

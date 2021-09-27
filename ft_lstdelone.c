@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 10:30:19 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:30:21 by migonzal         ###   ########.fr       */
+/*   Created: 2021/09/27 10:33:15 by migonzal          #+#    #+#             */
+/*   Updated: 2021/09/27 10:33:17 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@
 
 
 
-void *ft_calloc (size_t count, size_t size)
+void ft_lstdelone (t_list *lst, void (*del) (void *))
 {
-	size_t tot_size;
-	void *dst;
-
-	tot_size = size * count;
-	if (!(dst = malloc(tot_size)))
-			return (0);
-	ft_memset(dst, 0, tot_size);
-	return (dst);
-
+	if (!lst || !del)
+		return;
+	(del) (lst -> content);
+	free (lst);
 }
