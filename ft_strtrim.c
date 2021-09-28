@@ -6,7 +6,7 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:40:31 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:40:32 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/28 09:34:51 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,15 @@ char *ft_strtrim (char const *s1, char const *set)
 	{
 		start++;
 	}
+
+	if (start == ft_strlen(aux_len))
+		{
+
+	if (!(aux = ft_strdup("")))
+		return (NULL);
+	else
+		return (aux);
+		}
 
 	while (bool_set(s1[end - 1], set) == 1)
 		end--;
