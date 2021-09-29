@@ -6,51 +6,93 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:37:06 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/28 12:18:15 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 12:04:31 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
 #include "libft.h"
 
-static char **ft_malloc_split (char const *s, char c)
+static int	numstring(char const *s1, char c)
 {
-	size_t i;
-	char **split;
-	size_t total;
+	int	comp;
+	int	cles;
 
-	i = 0;
-	total = 0;
-	while(s[i])
+	comp = 0;
+	cles = 0;
+	if (*s1 == '\0')
+		return (0);
+	while (*s1 != '\0')
 	{
-		if (s[i] == c)
-			total++;
-		i++;
+		if (*s1 == c)
+			cles = 0;
+		else if (cles == 0)
+		{
+			cles = 1;
+			comp++;
+		}
+		s1++;
 	}
-	split = (char **) malloc(sizeof(s) * (total +2));
-	if (!split)
-		return (NULL);
-	return (split);
+	return (comp);
 }
 
-static void *ft_free_all(char **split, size_t elts)
+static int	numchar(char const *s2, char c, int i)
 {
-	size_t i;
+	int	lenght;
 
-	i = 0;
-	while(i < elts)
+	lenght = 0;
+	while (s2[i] != c && s2[i] != '\0')
 	{
-		free(split[i]);
+		lenght++;
 		i++;
 	}
-	free(split);
+	return (lenght);
+}
+
+static char	**freee(char const **dst, int j)
+{
+	while (j > 0)
+	{
+		j--;
+		free((void *)dst[j]);
+	}
+	free(dst);
 	return (NULL);
 }
 
-static void *ft_split_range (char **split, char const *s, t
+static char	**affect(char const *s, char **dst, char c, int l)
+{
+	int	i;
+	int	j;
+	int	k;
 
+	i = 0;
+	j = 0;
+	while (s[i] != '\0' && j < l)
+	{
+		k = 0;
+		while (s[i] == c)
+			i++;
+		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
+		if (dst[j] == NULL)
+			return (freee((char const **)dst, j));
+		while (s[i] != '\0' && s[i] != c)
+			dst[j][k++] = s[i++];
+		dst[j][k] = '\0';
+		j++;
+	}
+	dst[j] = 0;
+	return (dst);
+}
 
-	
+char	**ft_split(char const *s, char c)
+{
+	char	**dst;
+	int		l;
+
+	if (s == NULL)
+		return (NULL);
+	l = numstring(s, c);
+	dst = (char **)malloc(sizeof(char *) * (l + 1));
+	if (dst == NULL)
+		return (NULL);
+	return (affect(s, dst, c, l));
+}

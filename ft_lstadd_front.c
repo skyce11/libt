@@ -6,21 +6,15 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:32:47 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:32:49 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:19:57 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
 #include "libft.h"
 
-void *ft_lstadd_front(t_list **list, t_list *new)
+void	*ft_lstadd_front(t_list **list, t_list *new)
 {
 	if (!new)
 		return (0);
-
 	if (!list)
 	{
 		*list = new;

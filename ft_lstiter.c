@@ -6,29 +6,15 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:33:28 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:33:31 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:21:53 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
-
-
-
-
 #include "libft.h"
 
-
-void ft_lstiter(t_list *lst, void (*f) (void *))
+void	ft_lstiter(t_list *lst, void (*f) (void *))
 {
-
-
 	if (!lst || !f)
-		return;
-
-
+		return ;
 	while (lst)
 	{
 		f(lst -> content);

@@ -6,62 +6,43 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:40:31 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/28 09:34:51 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:13:35 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
 #include "libft.h"
 
-int bool_set (char c, const char *set)
+static int	is_in_set(char c, const char *set)
 {
 	while (*set)
 		if (c == *set++)
-			return (1);
-
-	return (0);
+			return (0);
+	return (1);
 }
 
-
-char *ft_strtrim (char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t start;
-	size_t end;
-	char *aux;
-	char *aux_len;
-
-	aux_len = (char *) s1;
+	size_t	start;
+	size_t	end;
+	char	*rtn;
 
 	if (!s1)
 		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
-
-
 	start = 0;
-	end = ft_strlen(aux_len);
-
-	while (bool_set(s1[start], set) == 1)
-	{
+	end = ft_strlen((char *)s1);
+	while (is_in_set(s1[start], set) == 0)
 		start++;
+	if (start == ft_strlen((char *)s1))
+	{
+		rtn = ft_strdup("");
+		if (!rtn)
+			return (NULL);
+		else
+			return (rtn);
 	}
-
-	if (start == ft_strlen(aux_len))
-		{
-
-	if (!(aux = ft_strdup("")))
-		return (NULL);
-	else
-		return (aux);
-		}
-
-	while (bool_set(s1[end - 1], set) == 1)
+	while (is_in_set(s1[end - 1], set) == 0)
 		end--;
-
-
-
-	aux = ft_substr(s1, start, end - start);
-	return (aux);
+	rtn = ft_substr(s1, start, end - start);
+	return (rtn);
 }

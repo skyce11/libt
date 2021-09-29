@@ -6,21 +6,16 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:34:41 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:34:42 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:27:12 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
 #include "libft.h"
 
-int ft_lstsize (t_list *list)
+int	ft_lstsize(t_list *list)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (list)
 	{
 		list = list -> next;

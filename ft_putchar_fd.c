@@ -6,17 +6,12 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:36:09 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:36:10 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 09:40:13 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
 #include "libft.h"
 
-
- void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

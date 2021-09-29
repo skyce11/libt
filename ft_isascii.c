@@ -6,18 +6,16 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:31:06 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:31:08 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 09:23:49 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	if (c >= 0 && c <= 0177)
 		i = 1;
 	return (i);

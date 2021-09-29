@@ -6,42 +6,56 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:40:41 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:40:43 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 13:02:16 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
 #include "libft.h"
 
 
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char
+	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	char *new;
-	char *aux;
-	int i;
+	str = (char*)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = 0;
+	return (str);
+}
 
-	aux = (char *) s;
+
+
+/*
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*new;
+	size_t		i;
+
 	new = malloc((len + 1) * sizeof(char));
 	i = 0;
-
 	if (!s)
 	{
-		return (0);;
-	}
-
-
-	if (!new)
 		return (NULL);
-
-	if ((size_t) start > ft_strlen(aux))
+	}
+	if (!new)
+		return (0);
+	if ((size_t) start > ft_strlen((char *)s))
 		return (ft_strdup(""));
-
-	while(s[start] != '\0' && len > 0)
+	while (s[start] && len > 0)
 	{
 		new[i] = s[start];
 		i++;
@@ -50,5 +64,4 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	new [i] = '\0';
 	return (new);
-}
-
+}*/

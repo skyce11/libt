@@ -6,24 +6,17 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:31:21 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 10:31:23 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 09:24:23 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	if (c >= '0' && c <= '9')
 		i = 1;
-
 	return (i);
 }

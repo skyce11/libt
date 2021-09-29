@@ -6,27 +6,21 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:32:33 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/28 09:39:03 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:18:33 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
-
 #include "libft.h"
 
-void *ft_lstadd_back (t_list **lst, t_list *new)
+void	*ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	if (*lst)
 	{
 		aux = ft_lstlast(*lst);
 		aux -> next = &*new;
 	}
-	else 
+	else
 		*lst = new;
-
-return(0) ;
+	return (0);
 }

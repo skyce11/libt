@@ -6,25 +6,19 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:39:15 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/27 11:06:11 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/29 12:50:57 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
-
 #include "libft.h"
 
-size_t ft_strlen( char *s)
+size_t	ft_strlen( char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i])
 	{
 		i++;
-
 	}
 	return (i);
 }
-
