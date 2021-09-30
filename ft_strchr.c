@@ -6,7 +6,7 @@
 /*   By: migonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 10:37:21 by migonzal          #+#    #+#             */
-/*   Updated: 2021/09/29 13:10:56 by migonzal         ###   ########.fr       */
+/*   Updated: 2021/09/30 15:48:43 by migonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,17 +16,11 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] && s[i] != (unsigned char) c)
 	{
-		if (s[i] == c)
-		{
-			return ((char *)s + i);
-		}
 		i++;
 	}
-	if (s[i] == c)
-	{
-		return ((char *)s + i);
-	}
+	if (s[i] == (unsigned char) c)
+		return ((char *) s + i);
 	return (0);
 }
